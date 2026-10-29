@@ -173,6 +173,41 @@
 .s4.is-active .fx-endcta a{animation:fxCapIn .4s var(--in,0s) forwards}
 .s4.is-active .fx-endcta a.web{animation:fxCapIn .4s var(--in,0s) forwards,fxPulse 1.6s ease-in-out 7.5s infinite}
 @keyframes fxPulse{0%,100%{transform:none}50%{transform:scale(1.04)}}
+/* 3枚目：仕組みの動画（流れの動画と同じ作り） */
+.fx-cause{margin-top:4px}
+.fx-snore path{fill:none;stroke:#8aa565;stroke-width:2.2;stroke-linecap:round;opacity:0}
+.k1.is-active .fx-snore path{animation:fxSnore 1.5s ease-out var(--d) infinite}
+@keyframes fxSnore{0%{opacity:0;transform:translateX(0)}30%{opacity:1}100%{opacity:0;transform:translateX(16px)}}
+.fx-relax{opacity:0}.k1.is-active .fx-relax{animation:fxFadeIn .5s var(--d) forwards}
+.fx-wall-top,.fx-wall-bot{transition:none}
+.k2.is-active .fx-wall-top{animation:fxTop 1.8s ease-in-out .9s forwards}
+.k2.is-active .fx-wall-bot{animation:fxBot 1.8s ease-in-out .9s forwards}
+@keyframes fxTop{to{transform:translateY(14px)}}@keyframes fxBot{to{transform:translateY(-14px)}}
+.fx-air circle{opacity:0}
+.k2.is-active .fx-air circle{animation:fxAir 1.8s linear var(--d) infinite}
+@keyframes fxAir{0%{opacity:0;transform:translateX(0)}12%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translateX(130px)}}
+.k3 .fx-wall-top{transform:translateY(14px)}.k3 .fx-wall-bot{transform:translateY(-14px)}
+.k3.is-active .fx-wall-top{animation:fxTop3 .9s ease-in .3s forwards}
+.k3.is-active .fx-wall-bot{animation:fxBot3 .9s ease-in .3s forwards}
+@keyframes fxTop3{from{transform:translateY(14px)}to{transform:translateY(26px)}}@keyframes fxBot3{from{transform:translateY(-14px)}to{transform:translateY(-26px)}}
+.k3.is-active .fx-air-stop circle{animation:fxJitter .5s ease-in-out 1.2s 4}
+@keyframes fxJitter{50%{transform:translateX(3px)}}
+.fx-hand{transform-origin:54px 52px}
+.k3.is-active .fx-hand{animation:fxSpin 3s linear 1.4s infinite}
+.fx-k4bg{fill:#dfe6ea}
+.k4.is-active .fx-k4bg{animation:fxDay .6s 2.6s forwards}
+.fx-wake{opacity:0}
+.k4.is-active .fx-wake{animation:fxBlink 1s ease-in-out .3s 2}
+@keyframes fxBlink{0%,100%{opacity:0}25%,70%{opacity:1}}
+.k4.is-active .fx-night{animation:fxFadeOut .5s 2.5s forwards}
+.fx-day{opacity:0}
+.k4.is-active .fx-day{animation:fxFadeIn .5s 2.8s forwards}
+.fx-yawn{transform-box:fill-box;transform-origin:center}
+.k4.is-active .fx-yawn{animation:fxYawn 1.4s ease-in-out 3.2s 2}
+@keyframes fxYawn{40%,60%{transform:scale(1.5,1.9)}}
+.fx-zt2{font:700 13px var(--sans);fill:#8aa565;opacity:0}
+.k4.is-active .fx-zt2{animation:fxZ 2s calc(3.4s + var(--d,0s)) 2}
+.sleep-cause .cause-note{font:400 11px/1.7 var(--sans);color:#7a7d70;text-align:center;margin:10px 0 0}
 .fx.is-hold .fx-scene *,.fx.is-hold .fx-scene{animation-play-state:paused!important}
 .fx-ctrl{display:flex;align-items:center;justify-content:center;gap:14px;padding:8px 0 12px}
 .fx-btn{display:grid;place-items:center;width:38px;height:38px;padding:0;border:1px solid #d5dfc7;border-radius:50%;background:#fff;cursor:pointer}
@@ -263,31 +298,75 @@
 </style></head><body>
 <main id="top"><header class="clinic-head"><img src="assets/images/logo.svg" width="1440" height="220" alt="ふくしまみなと耳鼻咽喉科"></header><section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><h1 id="hero-title"><span class="first">いびきが静かになると、</span><span class="main-copy"><em>毎日</em>が変わる。</span></h1><p class="hero-sub"><span>港区で、いびき・睡眠時無呼吸の検査。</span></p></div><figure class="hero-art"><img src="assets/images/morning-man-option03.jpg" width="1200" height="800" alt="朝の光が入る窓辺で、すっきりした表情の男性のイメージ" fetchpriority="high" decoding="async"></figure><div class="hero-assurances"><div class="assurance"><small>3割負担</small><strong class="price">3,000円〜</strong></div><div class="assurance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-8h6v8"/></svg><small>ご自宅で</small><strong>一晩の検査</strong></div><div class="assurance"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 2v6m10-6v6M3 11h18"/></svg><small>平日は夜も</small><strong>土日も診療</strong></div></div></section><section class="hero-reservation" aria-label="ご予約"><div class="reservation-pair"><a class="reserve web" href="https://medical.apokul.jp/web/655/reservations/add" target="_blank" rel="noopener" data-reservation="web"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 2v6m10-6v6M3 11h18m-12 5 2 2 4-4"/></svg><span>WEBで予約する</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a><a class="reserve line" href="https://lin.ee/7d8B1L3" target="_blank" rel="noopener" data-reservation="line"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10.7c0 4.3-4 7.7-9 7.7l-4.4 3 .6-3.7C5.1 16.6 3 13.8 3 10.7 3 6.4 7 3 12 3s9 3.4 9 7.7Z"/><path d="M7.5 10.5h9"/></svg><span>LINEで予約する</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a></div></section><section class="concerns" id="concerns" aria-labelledby="concerns-title"><img class="concern-photo" src="assets/images/tired-man.jpg" alt="" aria-hidden="true" width="1536" height="1024" loading="lazy"><h2 id="concerns-title"><span>こんなことは</span><br>ありませんか？</h2><ul class="concern-list"><li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m7 12 3 3 7-7"/></svg><p>家族に「<strong>いびきがうるさい</strong>」「<strong>息が止まっていた</strong>」と言われた</p></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m7 12 3 3 7-7"/></svg><p><strong>7時間</strong>寝ても、<strong>朝から体が重い</strong></p></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m7 12 3 3 7-7"/></svg><p>会議中や運転中に、<strong>急に眠くなる</strong></p></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m7 12 3 3 7-7"/></svg><p>朝起きたとき、<strong>頭が痛い</strong></p></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m7 12 3 3 7-7"/></svg><p>太ってから、<strong>いびきが大きくなった</strong></p></li></ul><p class="concern-bridge">それ、<br>年齢や疲れのせいだと<br><strong>見過ごしていませんか？</strong></p></section><section class="sleep-cause" id="sleep-cause" aria-labelledby="cause-title">
 <h2 id="cause-title"><small>寝ている間に、</small><em>呼吸が止まっている</em><br>かもしれません</h2>
-<div class="cause-film is-paused" data-phase="0" role="group" aria-label="いびきから無呼吸が起こる仕組みを説明する15秒のアニメーション">
-<div class="film-top"><span>眠っている間に起こること</span><button class="film-toggle" type="button" aria-label="アニメーションを再生">再生する</button></div>
-<div class="cause-stage">
-<svg class="cause-anatomy" viewBox="0 0 360 257" role="img" aria-label="のどを横から見た模式図。舌の奥の空気の通り道が狭まり、ふさがる様子。">
-<path class="body-shape" d="M172 241 166 210Q145 210 128 194L118 177 97 169Q91 166 100 158L100 151 90 147Q86 143 92 138L106 129 100 118Q100 65 140 43Q192 17 237 49Q274 75 269 123Q267 163 244 182L244 241Z"/>
-<path d="M106 129Q127 125 147 114Q169 103 198 107L211 138 208 213 210 239" class="airway"/>
-<path d="M110 151Q133 146 158 149Q183 148 187 166Q192 181 181 198Q172 207 159 204L130 184Q118 177 110 169Z" class="tongue"/>
-<path d="M144 113Q168 101 187 108Q192 118 195 133Q200 140 204 130" fill="#d6a392" stroke="#bb8a7b"/>
-<path d="M109 129Q130 125 151 116Q179 105 195 116Q210 132 208 156L208 231" class="flow"/>
-<path d="M114 110 130 107" stroke="#8f8174"/><circle class="focus-ring" cx="207" cy="170" r="31"/>
-<path d="m199 162 16 16m0-16-16 16" class="blocked-mark"/>
-<path d="M239 170H291" stroke="#b18a6a"/><text x="257" y="154">のど</text>
-<text x="62" y="232">横から見た模式図</text>
+<div class="fx fx-cause" aria-label="いびきから睡眠時無呼吸が起こる仕組みを説明するアニメーション">
+<div class="fx-player"><div class="fx-bars" role="tablist" aria-label="場面"></div><div class="fx-screen">
+<div class="fx-scene k1" data-dur="4000" data-label="いびき"><svg viewBox="0 0 320 200" role="img" aria-label="眠っている男性の横顔。口元からいびきが出ている"><rect width="320" height="200" fill="#dfe6ea"/>
+<circle cx="268" cy="40" r="16" fill="#f1e6a8"/><circle cx="276" cy="34" r="14" fill="#dfe6ea"/>
+<g class="pop" style="--d:.1s"><rect x="22" y="118" width="150" height="40" rx="14" fill="#fff" opacity=".9"/>
+<path d="M60 128q4-34 40-36 34 0 42 30l2 10q-2 8-12 8H70q-12-2-10-12Z" class="fx-skin"/>
+<path d="M58 126q2-36 40-38 30-1 40 20-16-8-36-6-22 4-44 24Z" fill="#3d3331"/>
+<path d="M112 116q6 3 12 0" class="fx-line"/>
+<ellipse cx="139" cy="128" rx="4" ry="3" fill="#b9705f"/>
+<path d="M20 150q80-12 260 0v24H20Z" fill="#cdd8bb"/><path d="M150 140q60-6 130 2v12H150Z" fill="#dfe6cf"/></g>
+<g class="fx-snore"><path d="M150 118q8 8 0 16" style="--d:.8s"/><path d="M160 112q12 14 0 28" style="--d:1.1s"/><path d="M170 106q16 20 0 40" style="--d:1.4s"/></g>
+<g class="fx-relax" style="--d:1.6s"><path d="M118 140q12 8 26 0" fill="none" stroke="#8dc21f" stroke-width="2.5" stroke-dasharray="4 4" stroke-linecap="round"/></g>
 </svg>
-<svg class="cause-sleep" viewBox="0 0 360 257" role="img" aria-label="呼吸が止まることで眠りが中断され、翌日のだるさや眠気につながる様子。">
-<path d="M180 28a24 24 0 1 0 27 33 22 22 0 0 1-27-33Z" fill="#e3d7ae" stroke="none"/>
-<text x="180" y="108" text-anchor="middle" style="font-size:16px;fill:#496f3c;font-weight:700">気づかないうちに、眠りが中断</text>
-<rect x="25" y="135" width="85" height="44" rx="11" fill="#e7eddb" stroke="none"/><rect x="137" y="135" width="85" height="44" rx="11" fill="#eee2d3" stroke="none"/><rect x="249" y="135" width="85" height="44" rx="11" fill="#e7eddb" stroke="none"/><path d="M115 157h16m-5-5 5 5-5 5M227 157h16m-5-5 5 5-5 5" stroke="#a4b785" fill="none"/><text x="67" y="162" text-anchor="middle">眠り</text><text x="179" y="153" text-anchor="middle" style="font-size:11px">一時的な<tspan x="179" dy="15">目覚め</tspan></text><text x="291" y="162" text-anchor="middle">眠り</text>
-<text x="180" y="206" text-anchor="middle">眠っていても、十分に休めないことが</text>
+<p class="fx-cap"><span style="--in:.2s">眠ると、<b>のどの筋肉</b>がゆるみます</span></p></div>
+<div class="fx-scene k2" data-dur="4500" data-label="通り道がせまくなる"><svg viewBox="0 0 320 200" role="img" aria-label="のどを拡大すると、空気の通り道がせまくなっていく"><rect width="320" height="200" fill="#dfe6ea"/>
+<g opacity=".55"><rect x="22" y="118" width="150" height="40" rx="14" fill="#fff" opacity=".9"/>
+<path d="M60 128q4-34 40-36 34 0 42 30l2 10q-2 8-12 8H70q-12-2-10-12Z" class="fx-skin"/>
+<path d="M58 126q2-36 40-38 30-1 40 20-16-8-36-6-22 4-44 24Z" fill="#3d3331"/>
+<path d="M112 116q6 3 12 0" class="fx-line"/>
+<ellipse cx="139" cy="128" rx="4" ry="3" fill="#b9705f"/>
+<path d="M20 150q80-12 260 0v24H20Z" fill="#cdd8bb"/><path d="M150 140q60-6 130 2v12H150Z" fill="#dfe6cf"/></g>
+<g class="pop" style="--d:.2s"><defs><clipPath id="fx-lens"><circle cx="214" cy="100" r="68"/></clipPath></defs>
+<circle cx="214" cy="100" r="72" fill="#fff" stroke="#8dc21f" stroke-width="3"/>
+<g clip-path="url(#fx-lens)"><rect x="146" y="32" width="136" height="136" fill="#fbf3ee"/>
+<g class="fx-wall-top"><path d="M140 30h150v42q-36 6-75 4t-75-4Z" fill="#e7b7a7"/><path d="M140 72q39 8 75 4t75-4" fill="none" stroke="#c98d7b" stroke-width="2"/></g>
+<g class="fx-wall-bot"><path d="M140 170h150v-42q-36-6-75-4t-75 4Z" fill="#e7b7a7"/><path d="M140 128q39-8 75-4t75 4" fill="none" stroke="#c98d7b" stroke-width="2"/></g>
+<g class="fx-air"><circle cx="150" cy="92" r="3.5" fill="#7fb6d9" style="--d:0.00s"/><circle cx="150" cy="100" r="3.5" fill="#7fb6d9" style="--d:0.32s"/><circle cx="150" cy="108" r="3.5" fill="#7fb6d9" style="--d:0.64s"/><circle cx="150" cy="92" r="3.5" fill="#7fb6d9" style="--d:0.96s"/><circle cx="150" cy="100" r="3.5" fill="#7fb6d9" style="--d:1.28s"/><circle cx="150" cy="108" r="3.5" fill="#7fb6d9" style="--d:1.60s"/><circle cx="150" cy="92" r="3.5" fill="#7fb6d9" style="--d:1.92s"/><circle cx="150" cy="100" r="3.5" fill="#7fb6d9" style="--d:2.24s"/></g></g>
+<path d="M100 132L148 112" stroke="#8dc21f" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="96" cy="134" r="9" fill="none" stroke="#8dc21f" stroke-width="2.5"/></g>
 </svg>
+<p class="fx-cap"><span style="--in:.2s">空気の通り道がせまくなり、<b>いびき</b>に</span></p></div>
+<div class="fx-scene k3" data-dur="4500" data-label="呼吸が止まる"><svg viewBox="0 0 320 200" role="img" aria-label="空気の通り道がふさがり、呼吸が止まる"><rect width="320" height="200" fill="#dfe6ea"/>
+<g opacity=".55"><rect x="22" y="118" width="150" height="40" rx="14" fill="#fff" opacity=".9"/>
+<path d="M60 128q4-34 40-36 34 0 42 30l2 10q-2 8-12 8H70q-12-2-10-12Z" class="fx-skin"/>
+<path d="M58 126q2-36 40-38 30-1 40 20-16-8-36-6-22 4-44 24Z" fill="#3d3331"/>
+<path d="M112 116q6 3 12 0" class="fx-line"/>
+<ellipse cx="139" cy="128" rx="4" ry="3" fill="#b9705f"/>
+<path d="M20 150q80-12 260 0v24H20Z" fill="#cdd8bb"/><path d="M150 140q60-6 130 2v12H150Z" fill="#dfe6cf"/></g>
+<g><defs><clipPath id="fx-lens3"><circle cx="214" cy="100" r="68"/></clipPath></defs>
+<circle cx="214" cy="100" r="72" fill="#fff" stroke="#8dc21f" stroke-width="3"/>
+<g clip-path="url(#fx-lens3)"><rect x="146" y="32" width="136" height="136" fill="#fbf3ee"/>
+<g class="fx-wall-top"><path d="M140 30h150v42q-36 6-75 4t-75-4Z" fill="#e7b7a7"/><path d="M140 72q39 8 75 4t75-4" fill="none" stroke="#c98d7b" stroke-width="2"/></g>
+<g class="fx-wall-bot"><path d="M140 170h150v-42q-36-6-75-4t-75 4Z" fill="#e7b7a7"/><path d="M140 128q39-8 75-4t75 4" fill="none" stroke="#c98d7b" stroke-width="2"/></g>
+<g class="fx-air-stop"><circle cx="168" cy="96" r="3.5" fill="#7fb6d9"/><circle cx="176" cy="104" r="3.5" fill="#7fb6d9"/><circle cx="184" cy="98" r="3.5" fill="#7fb6d9"/><circle cx="160" cy="104" r="3.5" fill="#7fb6d9"/><circle cx="192" cy="102" r="3.5" fill="#7fb6d9"/></g></g>
+<path d="M100 132L148 112" stroke="#8dc21f" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="96" cy="134" r="9" fill="none" stroke="#8dc21f" stroke-width="2.5"/></g>
+<g class="fx-clock pop" style="--d:1.2s"><circle cx="54" cy="52" r="24" fill="#fff" stroke="#9aa88a" stroke-width="2.5"/><path d="M54 32v5M54 67v5M34 52h5M69 52h5" stroke="#9aa88a" stroke-width="2"/><path class="fx-hand" d="M54 52V34" stroke="#d98c5f" stroke-width="2.5" stroke-linecap="round"/><circle cx="54" cy="52" r="2.5" fill="#d98c5f"/></g>
+</svg>
+<p class="fx-cap"><span style="--in:.2s">ふさがると、<b>呼吸が止まります</b></span></p></div>
+<div class="fx-scene k4" data-dur="5500" data-label="昼間の眠気"><svg viewBox="0 0 320 200" role="img" aria-label="夜中に何度も目が覚めかけ、翌日の昼間に眠くなる"><rect width="320" height="200" class="fx-k4bg"/>
+<g class="fx-night"><rect x="22" y="118" width="150" height="40" rx="14" fill="#fff" opacity=".9"/>
+<path d="M60 128q4-34 40-36 34 0 42 30l2 10q-2 8-12 8H70q-12-2-10-12Z" class="fx-skin"/>
+<path d="M58 126q2-36 40-38 30-1 40 20-16-8-36-6-22 4-44 24Z" fill="#3d3331"/>
+<path d="M112 116q6 3 12 0" class="fx-line"/>
+<ellipse cx="139" cy="128" rx="4" ry="3" fill="#b9705f"/>
+<path d="M20 150q80-12 260 0v24H20Z" fill="#cdd8bb"/><path d="M150 140q60-6 130 2v12H150Z" fill="#dfe6cf"/>
+<g class="fx-wake"><circle cx="118" cy="114" r="5" fill="#fff" stroke="#3d3331" stroke-width="1.5"/><circle cx="119" cy="114" r="2" fill="#3d3331"/><path d="M104 96l-6-8M118 92v-10M132 96l6-8" stroke="#d98c5f" stroke-width="2.5" stroke-linecap="round"/></g></g>
+<g class="fx-day">
+<rect x="40" y="132" width="240" height="10" rx="4" fill="#c9b89c"/><rect x="176" y="94" width="72" height="44" rx="5" fill="#e3e8ec" stroke="#9aa6ae" stroke-width="2"/><path d="M168 138h88" stroke="#9aa6ae" stroke-width="4" stroke-linecap="round"/>
+<path d="M92 132q0-34 32-34t32 34" fill="#9bbd6b"/><circle cx="124" cy="78" r="22" class="fx-skin"/><path d="M102 76q0-28 22-28t22 28q-5-14-22-16-17 2-22 16Z" fill="#3d3331"/>
+<path d="M114 74q4 3 8 0M128 74q4 3 8 0" class="fx-line"/><ellipse class="fx-yawn" cx="125" cy="88" rx="5" ry="6" fill="#b9705f"/>
+<path d="M140 96q10 2 12-8" fill="none" stroke="#f6dccd" stroke-width="7" stroke-linecap="round"/>
+<g class="fx-zz"><text x="152" y="62" class="fx-zt2">z</text><text x="162" y="50" class="fx-zt2" style="--d:.5s">z</text></g></g>
+</svg>
+<p class="fx-cap"><span style="--in:.2s;--out:2.6s">何度も<b>眠りが途切れ</b>ます</span><span style="--in:2.9s">その結果、<b>昼間の眠気</b>に</span></p></div>
 </div>
-<div class="film-captions"><p class="film-caption caption-0">のどが狭くなり、いびきが出る<small>眠ると、のどの筋肉がゆるみます。</small></p><p class="film-caption caption-1">ふさがると、呼吸が止まる<small>空気が通りにくくなります。</small></p><p class="film-caption caption-2">朝のだるさ・日中の眠気に<small>呼吸を戻そうとして、眠りが浅くなります。</small></p></div>
-<div class="film-steps" aria-label="場面を選ぶ"><button class="film-step" type="button" data-scene="0" aria-pressed="true">いびき</button><button class="film-step" type="button" data-scene="1" aria-pressed="false">呼吸が止まる</button><button class="film-step" type="button" data-scene="2" aria-pressed="false">眠りが浅くなる</button></div>
-</div>
-<p class="cause-note">閉塞性睡眠時無呼吸の仕組みを簡略化した模式図です。</p>
+<div class="fx-ctrl"><button type="button" class="fx-btn fx-prev" aria-label="前の場面"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="fx-btn fx-play" aria-label="一時停止"><svg class="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg><svg class="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></button><span class="fx-count"><b>1</b> / 4</span><button type="button" class="fx-btn fx-next" aria-label="次の場面"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div>
+</div></div>
+<p class="cause-note">簡略化したイメージです。</p>
 <p class="cause-takeaway">いびきと昼間の眠気。<br>この2つにつながるのが、<br><strong>睡眠時無呼吸症候群です。</strong></p>
 </section><section class="better-days" id="better-days" aria-labelledby="days-title">
 <h2 id="days-title">眠りを整えて、<br><em>毎日をもっと楽に</em></h2>
@@ -373,29 +452,12 @@
 <div class="choice-reservation" aria-label="検査のご予約"><div class="reservation-pair"><a class="reserve web" href="https://medical.apokul.jp/web/655/reservations/add" target="_blank" rel="noopener" data-reservation="web"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 2v6m10-6v6M3 11h18m-12 5 2 2 4-4"/></svg><span>WEBで予約する</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a><a class="reserve line" href="https://lin.ee/7d8B1L3" target="_blank" rel="noopener" data-reservation="line"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10.7c0 4.3-4 7.7-9 7.7l-4.4 3 .6-3.7C5.1 16.6 3 13.8 3 10.7 3 6.4 7 3 12 3s9 3.4 9 7.7Z"/><path d="M7.5 10.5h9"/></svg><span>LINEで予約する</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a></div></div>
 </div></section><section class="fees" id="fees" aria-labelledby="fees-title"><p class="fees-kicker">費用の目安</p><h2 id="fees-title">検査も治療も、<br><em>保険診療</em>です</h2><p class="fees-basis">保険診療・3割負担の方</p><dl class="fee-list"><div class="fee-item"><dt>ご自宅での簡易検査</dt><dd><div class="fee-value">3,000円<small>〜</small></div></dd></div><div class="fee-item"><dt>CPAP治療</dt><dd><div class="fee-value"><span class="fee-month">月</span>5,000〜6,000円<small>ほど</small></div></dd></div></dl><p class="fees-note">金額は負担割合や診療内容によって変わります。</p></section><section class="drivers" id="drivers" aria-labelledby="drivers-title"><div class="driver-panel"><img class="driver-photo" src="assets/images/sleepy-truck-driver.jpg" alt="" aria-hidden="true" width="1536" height="1024" loading="lazy"><p class="driver-jobs">トラック・バス・タクシーなど</p><h2 id="drivers-title"><span>運転の</span><br><span>お仕事の方へ</span></h2><p class="driver-lead">日中の眠気を、<br>見過ごさないために。</p><p class="driver-copy">睡眠時無呼吸による眠気は、運転中の事故につながるおそれがあります。</p><p class="driver-copy">会社の健診で<strong>いびきや眠気を指摘された方</strong>も、ご相談ください。</p></div></section><section class="faq" id="faq" aria-labelledby="faq-title"><h2 id="faq-title">よくある質問</h2><div class="faq-list"><details class="faq-item" name="minato-faq"><summary><span class="faq-q" aria-hidden="true">Q</span><span>検査の費用はいくらですか？</span><span class="faq-toggle" aria-hidden="true"></span></summary><p class="faq-answer">保険診療で、3割負担の方は3,000円ほどからです。初診料や診療内容により変わります。</p></details><details class="faq-item" name="minato-faq"><summary><span class="faq-q" aria-hidden="true">Q</span><span>自宅の検査では何をしますか？</span><span class="faq-toggle" aria-hidden="true"></span></summary><p class="faq-answer">小さな機器をつけて、いつもどおり寝ていただきます。睡眠中の呼吸の状態を調べる検査です。</p></details><details class="faq-item" name="minato-faq"><summary><span class="faq-q" aria-hidden="true">Q</span><span>検査は何日かかりますか？</span><span class="faq-toggle" aria-hidden="true"></span></summary><p class="faq-answer">ご自宅での検査は一晩です。</p></details><details class="faq-item" name="minato-faq"><summary><span class="faq-q" aria-hidden="true">Q</span><span>結果はいつ分かりますか？</span><span class="faq-toggle" aria-hidden="true"></span></summary><p class="faq-answer">機器をご返却いただいた後、次の診察で医師が結果をご説明します。</p></details><details class="faq-item" name="minato-faq"><summary><span class="faq-q" aria-hidden="true">Q</span><span>睡眠時無呼吸と診断されたら？</span><span class="faq-toggle" aria-hidden="true"></span></summary><p class="faq-answer">症状の程度や原因に合わせて、CPAP、マウスピース、鼻の治療などをご提案します。</p></details><details class="faq-item" name="minato-faq"><summary><span class="faq-q" aria-hidden="true">Q</span><span>いびきだけでも受診できますか？</span><span class="faq-toggle" aria-hidden="true"></span></summary><p class="faq-answer">はい。ご家族にいびきを指摘された方も、お気軽にご相談ください。</p></details><details class="faq-item" name="minato-faq"><summary><span class="faq-q" aria-hidden="true">Q</span><span>CPAPはずっと続けるのですか？</span><span class="faq-toggle" aria-hidden="true"></span></summary><p class="faq-answer">使用を続けることで効果が得られる治療です。体重などの変化も踏まえ、治療の継続について診察で確認します。</p></details><details class="faq-item" name="minato-faq"><summary><span class="faq-q" aria-hidden="true">Q</span><span>レーザー治療はしていますか？</span><span class="faq-toggle" aria-hidden="true"></span></summary><p class="faq-answer">当院では行っていません。まず検査でいびきの原因を調べ、保険で続けられる治療をご提案します。</p></details><details class="faq-item" name="minato-faq"><summary><span class="faq-q" aria-hidden="true">Q</span><span>子どものいびきも診てもらえますか？</span><span class="faq-toggle" aria-hidden="true"></span></summary><p class="faq-answer">はい。お子さんのいびきは、アデノイドや扁桃の大きさが関係することもあります。まずは診察で鼻とのどの状態を確認します。</p></details></div></section><section class="director" id="director" aria-labelledby="director-title"><h2 id="director-title">院長紹介</h2><div class="director-profile"><figure class="director-portrait"><img src="assets/images/director-official.jpg" width="1086" height="1448" alt="院長 福島昌浩" loading="lazy"></figure><div class="director-identity"><p class="director-clinic">ふくしまみなと<br>耳鼻咽喉科</p><p class="director-name"><span class="director-role">院長</span>福島 昌浩</p><p class="director-specialty">耳鼻咽喉科専門医</p></div></div><div class="director-message"><h3>「たかがいびき」と思わず、<br>お気軽にご相談ください</h3><p>中京病院・中部労災病院で、耳鼻咽喉科・頭頸部外科の診療に携わってきました。</p><p>いびきは、眠りの質や体に関わるサインのひとつです。鼻とのどの状態を確かめ、一人ひとりに合った治療をご提案します。</p></div></section><section class="access" id="access" aria-labelledby="access-title"><div class="access-reservation"><h2 id="access-title">ご予約は<br>WEB・LINEから</h2><div class="reservation-pair"><a class="reserve web" href="https://medical.apokul.jp/web/655/reservations/add" target="_blank" rel="noopener" data-reservation="web"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 2v6m10-6v6M3 11h18m-12 5 2 2 4-4"/></svg><span>WEBで予約する</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a><a class="reserve line" href="https://lin.ee/7d8B1L3" target="_blank" rel="noopener" data-reservation="line"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10.7c0 4.3-4 7.7-9 7.7l-4.4 3 .6-3.7C5.1 16.6 3 13.8 3 10.7 3 6.4 7 3 12 3s9 3.4 9 7.7Z"/><path d="M7.5 10.5h9"/></svg><span>LINEで予約する</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a></div></div><h3>アクセス・診療時間</h3><figure class="access-photo"><img src="assets/images/clinic-exterior.jpg" width="1024" height="587" alt="ふくしまみなと耳鼻咽喉科の外観" loading="lazy"></figure><img class="access-logo" src="assets/images/logo.svg" width="1440" height="220" alt="ふくしまみなと耳鼻咽喉科" loading="lazy"><address class="access-address">〒455-0068<br>名古屋市港区土古町1丁目52-4</address><p class="access-facts"><span>港北駅 徒歩3分</span><span>駐車場25台以上</span></p><table class="access-hours" aria-label="診療時間"><tbody><tr><th scope="row">月〜金</th><td><span>9:00〜12:00</span><span>15:00〜18:30</span></td></tr><tr><th scope="row">土・日</th><td><span>9:00〜13:00</span></td></tr></tbody></table><p class="access-hours-note">休診日：祝日<br>WEB受付は診療終了の30分前まで。</p><iframe class="access-map" src="https://maps.google.com/maps?hl=ja&amp;output=embed&amp;q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%B8%AF%E5%8C%BA%E5%9C%9F%E5%8F%A4%E7%94%BA1%E4%B8%81%E7%9B%AE52-4&amp;z=16" title="ふくしまみなと耳鼻咽喉科の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><p class="access-map-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%B5%E3%81%8F%E3%81%97%E3%81%BE%E3%81%BF%E3%81%AA%E3%81%A8%E8%80%B3%E9%BC%BB%E5%92%BD%E5%96%89%E7%A7%91" target="_blank" rel="noopener">Googleマップで見る</a></p><details class="access-notes"><summary>診療・費用について</summary><ul><li>掲載費用は3割負担の目安です。負担割合や診療内容により金額は異なります。</li><li>CPAPの保険適用には、検査結果などによる基準があります。</li><li>検査結果と症状、鼻とのどの状態を踏まえて治療をご提案します。治療の効果には個人差があります。</li></ul></details><p class="access-footer">ふくしまみなと耳鼻咽喉科</p></section></main><nav class="fixed-reservation" aria-label="予約メニュー"><div class="reservation-pair"><a class="reserve web" href="https://medical.apokul.jp/web/655/reservations/add" target="_blank" rel="noopener" data-reservation="web"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 2v6m10-6v6M3 11h18m-12 5 2 2 4-4"/></svg><span>WEBで予約する</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a><a class="reserve line" href="https://lin.ee/7d8B1L3" target="_blank" rel="noopener" data-reservation="line"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10.7c0 4.3-4 7.7-9 7.7l-4.4 3 .6-3.7C5.1 16.6 3 13.8 3 10.7 3 6.4 7 3 12 3s9 3.4 9 7.7Z"/><path d="M7.5 10.5h9"/></svg><span>LINEで予約する</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a></div></nav><script>
 
-// Only run the explanation when it is visible. No sound or third-party embeds.
-(()=>{
- const film=document.querySelector('.cause-film');if(!film)return;
- const toggle=film.querySelector('.film-toggle');const steps=[...film.querySelectorAll('.film-step')];
- let time=0,last=0,running=false,started=false;
- const duration=15000,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
- function paint(){const phase=Math.min(2,Math.floor(time/5000));film.dataset.phase=String(phase);film.querySelector('.cause-anatomy').setAttribute('aria-hidden',String(phase===2));film.querySelector('.cause-sleep').setAttribute('aria-hidden',String(phase!==2));steps.forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===phase));b.style.setProperty('--progress',Math.max(0,Math.min(100,(time-i*5000)/50))+'%')});}
- function stop(){running=false;film.classList.add('is-paused');toggle.textContent=time>=duration?'もう一度見る':'再生する';toggle.setAttribute('aria-label',time>=duration?'アニメーションをもう一度再生':'アニメーションを再生');}
- function frame(now){if(!running)return;if(last)time=Math.min(duration,time+now-last);last=now;paint();if(time>=duration){stop();return;}requestAnimationFrame(frame);}
- function play(){if(time>=duration)time=0;running=true;last=0;started=true;film.classList.remove('is-paused');toggle.textContent='一時停止';toggle.setAttribute('aria-label','アニメーションを一時停止');requestAnimationFrame(frame);}
- toggle.addEventListener('click',()=>running?stop():play());
- steps.forEach((b,i)=>b.addEventListener('click',()=>{time=i*5000;started=true;stop();paint();}));
- new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){if(!started&&!reduce)play();}else if(running)stop();});},{threshold:.55}).observe(film);
- document.addEventListener('visibilitychange',()=>{if(document.hidden&&running)stop();});paint();
-})();
-
 // FVと最後の予約ボタンが見えている間は、画面下の固定予約バーを隠す（ボタンが2組並ばないように）
 (()=>{const bar=document.querySelector('.fixed-reservation');const targets=[...document.querySelectorAll('.hero-reservation,.access-reservation')];if(!bar||!targets.length)return;
 function update(){const h=innerHeight;const visible=targets.some(t=>{const r=t.getBoundingClientRect();return r.bottom>0&&r.top<h;});bar.classList.toggle('is-hidden',visible);}
 addEventListener('scroll',update,{passive:true});addEventListener('resize',update);addEventListener('load',update);update();})();
-// 検査から治療までの動画：画面内のときだけ再生。最後まで見たら最後の場面で止まる
-(()=>{
-  var root=document.querySelector('.fx');if(!root)return;
+// 動画（仕組み・流れ）：画面内のときだけ再生。最後まで見たら最後の場面で止まる
+document.querySelectorAll('.fx').forEach(function(root){
   var scenes=[].slice.call(root.querySelectorAll('.fx-scene'));
   var bars=root.querySelector('.fx-bars'),count=root.querySelector('.fx-count b');
   var i=0,t0=performance.now(),elapsed=0,paused=false,visible=false,ended=false;
@@ -418,6 +480,7 @@ addEventListener('scroll',update,{passive:true});addEventListener('resize',updat
   if('IntersectionObserver' in window){new IntersectionObserver(function(es){setState(es[0].isIntersecting,paused)},{threshold:.45}).observe(root.querySelector('.fx-player'));}else setState(true,paused);
   document.addEventListener('visibilitychange',function(){if(document.hidden)setState(false,paused)});
   requestAnimationFrame(tick);
-})();
+});
+
 
 </script></body></html>
