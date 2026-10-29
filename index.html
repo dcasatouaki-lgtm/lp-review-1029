@@ -390,10 +390,9 @@
 })();
 
 // FVと最後の予約ボタンが見えている間は、画面下の固定予約バーを隠す（ボタンが2組並ばないように）
-(()=>{const bar=document.querySelector('.fixed-reservation');const targets=[...document.querySelectorAll('.hero-reservation,.access-reservation')];
-if(!bar||!targets.length||!('IntersectionObserver' in window))return;const seen=new Set();
-const io=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));bar.classList.toggle('is-hidden',seen.size>0);},{threshold:0});
-targets.forEach(t=>io.observe(t));})();
+(()=>{const bar=document.querySelector('.fixed-reservation');const targets=[...document.querySelectorAll('.hero-reservation,.access-reservation')];if(!bar||!targets.length)return;
+function update(){const h=innerHeight;const visible=targets.some(t=>{const r=t.getBoundingClientRect();return r.bottom>0&&r.top<h;});bar.classList.toggle('is-hidden',visible);}
+addEventListener('scroll',update,{passive:true});addEventListener('resize',update);addEventListener('load',update);update();})();
 // 検査から治療までの動画：画面内のときだけ再生。最後まで見たら最後の場面で止まる
 (()=>{
   var root=document.querySelector('.fx');if(!root)return;
